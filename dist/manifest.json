@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Clean Copy",
+  "description": "Copy text from anywhere. Paste it clean.",
+  "version": "0.1.0",
+  "permissions": [
+    "clipboardRead",
+    "clipboardWrite",
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "ui/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "host_permissions": ["<all_urls>"]
+}

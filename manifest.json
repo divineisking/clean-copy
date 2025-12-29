@@ -3,7 +3,7 @@
   "name": "Clean Copy",
   "description": "Copy text from anywhere. Paste it clean.",
   "version": "0.1.0",
-  "permissions": ["clipboardWrite", "storage"],
+  "permissions": ["clipboardRead", "clipboardWrite", "storage"],
   "background": {
     "service_worker": "background.js"
   },
@@ -14,8 +14,7 @@
     {
       "matches": ["<all_urls>"],
       "js": ["content.js"],
-      "run_at": "document_start",
-      "type": "module"
+      "run_at": "document_start"
     }
   ]
 }
