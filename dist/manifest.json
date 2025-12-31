@@ -3,13 +3,7 @@
   "name": "Clean Copy",
   "description": "Copy text from anywhere. Paste it clean.",
   "version": "0.1.0",
-  "permissions": [
-    "clipboardRead",
-    "clipboardWrite",
-    "storage",
-    "activeTab",
-    "scripting"
-  ],
+  "permissions": ["clipboardRead", "clipboardWrite", "storage"],
   "background": {
     "service_worker": "background.js"
   },
@@ -18,14 +12,9 @@
   },
   "content_scripts": [
     {
-      "matches": [
-        "<all_urls>"
-      ],
-      "js": [
-        "content.js"
-      ],
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
       "run_at": "document_start"
     }
-  ],
-  "host_permissions": ["<all_urls>"]
+  ]
 }
